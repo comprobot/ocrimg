@@ -5,8 +5,8 @@ $time_stamp = $_POST["userpass"];
 $app_key = $_POST["app_key"];
 $image_str = $_POST["image_str"];
 $params = array(
-    //'image' => base64_encode($image_str),
-   'image' => $image_str,	
+    'image' => base64_encode($image_str),
+   //'image' => $image_str,	
 );
 
 $url = "https://api.ai.qq.com/fcgi-bin/ocr/ocr_generalocr";
