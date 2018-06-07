@@ -4,9 +4,13 @@ $nonce_str = $_POST["nonce_str"];
 $time_stamp = $_POST["userpass"];
 $app_key = $_POST["app_key"];
 $image_str = $_POST["image_str"];
+
+$base64 = str_replace('data:image/png;base64,','',$_POST['image_str']);
+
+
 $params = array(
-    'image' => base64_encode($image_str),
-   //'image' => $image_str,	
+   // 'image' => base64_encode($image_str),
+   'image' => $base64,	
 );
 
 $url = "https://api.ai.qq.com/fcgi-bin/ocr/ocr_generalocr";
