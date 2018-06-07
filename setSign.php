@@ -43,8 +43,8 @@ $params = array(
         $str .= 'app_key=' . $app_key;
 
         // 4. MD5运算+转换大写，得到请求签名
-        $sign = strtoupper(md5($str));
-		
+        //$sign = strtoupper(md5($str));
+	$sign = strtoupper($str);	
 		echo $sign;
 
 ?>
