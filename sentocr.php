@@ -73,12 +73,12 @@ $params = array(
         } while (0);
 
         curl_close($curl);
-        return $response;
+        //return $response;
+        echo $response;
 
 
 
 
 
-
-		echo $sign;
+		
 ?>
