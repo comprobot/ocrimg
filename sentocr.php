@@ -38,7 +38,7 @@ $params['app_id'] = $app_id;
         $sign = strtoupper(md5($str));
 	//$sign = strtoupper($str);	
 
-        echo $str;
+        //echo $str;
 
         $curl = curl_init();
 
@@ -66,8 +66,8 @@ $params['app_id'] = $app_id;
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, true);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             $response = curl_exec($curl);
-            self::$_http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            if (self::$_http_code != 200)
+            $_http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            if ($_http_code != 200)
             {
                 $msg = curl_error($curl);
                 $response = json_encode(array('ret' => -1, 'msg' => "sdk http post err: {$msg}", 'http_code' => self::$_http_code));
