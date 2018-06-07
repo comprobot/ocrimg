@@ -8,9 +8,12 @@ $params = array(
     //'image' => base64_encode($image_str),
    'image' => $image_str,	
 );
+
+$url = "https://api.ai.qq.com/fcgi-bin/ocr/ocr_generalocr";
+
+
 		
-		
-		$params['app_id'] = $app_id;
+$params['app_id'] = $app_id;
         if (!$params['nonce_str'])
         {
             $params['nonce_str'] = uniqid("{$params['app_id']}_");
@@ -35,7 +38,8 @@ $params = array(
         // 4. MD5运算+转换大写，得到请求签名
         //$sign = strtoupper(md5($str));
 	$sign = strtoupper($str);	
-        curl_close($curl);
+
+
 
         $curl = curl_init();
 
