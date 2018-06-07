@@ -8,7 +8,7 @@ $params = array(
     'image' => base64_encode($image_data),
 );
 
-echo "testing.."
+echo "testing..";
 $base64 = base64_encode($image_data);
 
 // 设置请求数据
