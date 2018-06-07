@@ -1,6 +1,6 @@
 <?php
 
-
+require('./HttpUtil.php');
 
 $image_data = file_get_contents('./data/generalocr.jpg');
 
