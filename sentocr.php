@@ -10,10 +10,9 @@ $params = array(
 );
 
 $url = "https://api.ai.qq.com/fcgi-bin/ocr/ocr_generalocr";
-
-
-		
 $params['app_id'] = $app_id;
+
+
         if (!$params['nonce_str'])
         {
             $params['nonce_str'] = uniqid("{$params['app_id']}_");
@@ -36,10 +35,10 @@ $params['app_id'] = $app_id;
         // 3. 拼接app_key
         $str .= 'app_key=' . $app_key;
         // 4. MD5运算+转换大写，得到请求签名
-        //$sign = strtoupper(md5($str));
-	$sign = strtoupper($str);	
+        $sign = strtoupper(md5($str));
+	//$sign = strtoupper($str);	
 
-
+        echo $str;
 
         $curl = curl_init();
 
