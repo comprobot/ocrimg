@@ -41,15 +41,12 @@ function http($url, $params = array(), $method = 'GET', $ssl = false){
 ?>
 <?php
 
-require('./HttpUtil.php');
-
 $image_data = file_get_contents('./data/generalocr.jpg');
-
 $params = array(
     'image' => base64_encode($image_data),
 );
 
-echo 'testing..';
+echo 'tffff..';
 $base64 = base64_encode($image_data);
 
 // 设置请求数据
