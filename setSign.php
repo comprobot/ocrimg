@@ -8,7 +8,8 @@ $image_str = $_POST["image_str"];
 
 
 $params = array(
-    'image' => base64_encode($image_str),
+    //'image' => base64_encode($image_str),
+   'image' => $image_str,	
 );
 
 		
