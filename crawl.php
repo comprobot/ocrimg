@@ -1,5 +1,5 @@
 <?php
-    public static function getReqSign(&$params)
+    function getReqSign(&$params)
     {
         // 0. 补全基本参数
         $params['app_id'] = '1106872796';
