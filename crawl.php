@@ -51,7 +51,10 @@
 		
 		$params['sign'] = getReqSign($params);
 
-        		
+        		echo 'sign';
+		echo $params['sign'];
+	
+		echo '<br/>'	;		
 
         $curl = curl_init();
         $response = false;
@@ -78,13 +81,14 @@
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, true);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             $response = curl_exec($curl);
-			echo $response;            
+	    echo '<br/>';            
             $response = json_encode(array('ret' => -1, 'msg' => "sdk http post err: {$msg}", 'http_code' => self::$_http_code));
+	    echo $response;            	
 			
         } while (0);
 
         curl_close($curl);
-        return $response;
+        
 
 
 ?>
