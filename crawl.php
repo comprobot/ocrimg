@@ -36,6 +36,46 @@
         return $sign;
     }
 
+
+ function getReqSignT(&$params)
+    {
+        // 0. 补全基本参数
+        $params['app_id'] = '1106872796';
+
+        if (!$params['nonce_str'])
+        {
+           // $params['nonce_str'] = uniqid("{$params['app_id']}_");
+	    $params['nonce_str'] = '1106872796';
+        }
+
+        if (!$params['time_stamp'])
+        {
+            $params['time_stamp'] = time();
+        }
+
+        // 1. 字典升序排序
+        ksort($params);
+
+        // 2. 拼按URL键值对
+        $str = '';
+        foreach ($params as $key => $value)
+        {
+            if ($value !== '')
+            {
+                $str .= $key . '=' . urlencode($value) . '&';
+            }
+        }
+
+        // 3. 拼接app_key
+        $str .= 'app_key=' . 'V27D1dj9Pz3uA3E7';
+
+        // 4. MD5运算+转换大写，得到请求签名
+        $sign = strtoupper(md5($str));
+        return $str;
+    }
+
+
+
 ?>
 
 <?php
@@ -48,6 +88,8 @@
 		$params = array(
 			'image' => base64_encode($image_data),
 		);     
+
+ 		$all_str = getReqSignT($params);
 		
 		
 		$params['sign'] = getReqSign($params);
@@ -60,6 +102,9 @@
 		echo '<br/>'	;	
                 echo 'time_stamp  : <br/>';
 		echo $params['time_stamp'];	
+		echo '<br/>'	;	
+		echo '$all_str  : <br/>';
+		echo $all_str;	
 		echo '<br/>'	;	
 
 
