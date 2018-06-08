@@ -6,7 +6,8 @@
 
         if (!$params['nonce_str'])
         {
-            $params['nonce_str'] = uniqid("{$params['app_id']}_");
+           // $params['nonce_str'] = uniqid("{$params['app_id']}_");
+	    $params['nonce_str'] = '1106872796';
         }
 
         if (!$params['time_stamp'])
@@ -51,10 +52,21 @@
 		
 		$params['sign'] = getReqSign($params);
 
-        		echo 'sign';
+                echo 'sign  : <br/>';
 		echo $params['sign'];
-	
-		echo '<br/>'	;		
+                echo '<br/>'	;		
+                echo 'image  : <br/>';
+		echo $params['image'];	
+		echo '<br/>'	;	
+                echo 'time_stamp  : <br/>';
+		echo $params['time_stamp'];	
+		echo '<br/>'	;	
+
+
+// $params['time_stamp']
+
+
+
 
         $curl = curl_init();
         $response = false;
@@ -82,7 +94,7 @@
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             $response = curl_exec($curl);
 	    echo '<br/>';            
-            $response = json_encode(array('ret' => -1, 'msg' => "sdk http post err: {$msg}", 'http_code' => self::$_http_code));
+            //$response = json_encode(array('ret' => -1, 'msg' => "sdk http post err: {$msg}", 'http_code' => self::$_http_code));
 	    echo $response;            	
 			
         } while (0);
