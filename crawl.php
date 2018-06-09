@@ -113,7 +113,7 @@
 // $params['time_stamp']
 
 
-
+        print_r( $params ); 
 
         $curl = curl_init();
         $response = false;
