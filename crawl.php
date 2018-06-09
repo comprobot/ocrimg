@@ -137,7 +137,7 @@
             // 3. 设置HTTP BODY (URL键值对)
             $body = http_build_query($params);
 		
-	    echo 'test---';
+	    echo 'test-aaa--<br/>';
 	    echo $body;	
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $body);
