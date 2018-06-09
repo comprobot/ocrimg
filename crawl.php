@@ -97,15 +97,14 @@
                 echo 'sign  : <br/>';
 		echo $params['sign'];
                 echo '<br/>'	;		
-		echo 'image b4 base4  : <br/>';
-		echo $image_data;	
-		echo '<br/>'	;	                
+
                 echo 'image  : <br/>';
 		echo $params['image'];	
 		echo '<br/>'	;	
                 echo 'time_stamp  : <br/>';
 		echo $params['time_stamp'];	
 		echo '<br/>'	;	
+
 		echo '$all_str  : <br/>';
 		echo $all_str;	
 		echo '<br/>'	;	
