@@ -140,6 +140,11 @@
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, true);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+		
+		
+            print_r($curl);  		
+		
+		
             $response = curl_exec($curl);
 	    echo '<br/>';            
             //$response = json_encode(array('ret' => -1, 'msg' => "sdk http post err: {$msg}", 'http_code' => self::$_http_code));
