@@ -8,11 +8,15 @@
         {
            // $params['nonce_str'] = uniqid("{$params['app_id']}_");
 	    $params['nonce_str'] = '1106872796';
+	    $params['time_stamp'] = 1528537142;
         }
 
         if (!$params['time_stamp'])
         {
             $params['time_stamp'] = time();
+	    $params['time_stamp'] = 1528537142;
+		//1528537142
+		
         }
 
         // 1. 字典升序排序
