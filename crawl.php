@@ -113,7 +113,7 @@
 // $params['time_stamp']
 
 
-        print_r( $params ); 
+        //print_r( $params ); 
 
         $curl = curl_init();
         $response = false;
@@ -130,6 +130,7 @@
 
             // 3. 设置HTTP BODY (URL键值对)
             $body = http_build_query($params);
+	    echo $body;	
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $body);
 
